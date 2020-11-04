@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulado</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    Sua nacionalidade: <input type="text" name="nanal" id="nanal">
+    <input type="button" value="Verificar" onclick="analisar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function analisar() {
+            var nacl = window.document.querySelector('input#nanal')
+            var res = window.document.querySelector('div#res')
+            var nacldd = String(nacl.value)
+            res.innerHTML = `<p>Sua nacionalidade é <strong>${nacldd}</strong></p>`
+            if (nacldd !='Br' && nacldd !='Brasileiro') {
+                res.innerHTML += `<p>Você não é daqui <strong>PROCURE UM CONSULADO!!!!</strong>.`
+            }else{
+            res.innerHTML += `<p>Você é daqui, Olá Brasileiro!</p>`
+            }
+        }
+    </script>
+</html>
